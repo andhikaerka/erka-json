@@ -1,4 +1,4 @@
-import yaml from "js-yaml"
+import { load as yamlLoad } from "js-yaml"
 import { XMLParser, XMLValidator } from "fast-xml-parser"
 
 export type TargetFormat = "json" | "sql" | "csv" | "typescript"
@@ -39,7 +39,7 @@ export function parseSource(input: string, source: SourceFormat): unknown {
     case "json":
       return JSON.parse(input)
     case "yaml": {
-      const result = yaml.load(input)
+      const result = yamlLoad(input)
       if (result === undefined) throw new Error("YAML produced no document.")
       return result
     }
