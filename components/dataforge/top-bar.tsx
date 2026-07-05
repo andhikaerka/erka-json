@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Check, ChevronsUpDown, FileJson, Sparkles, Zap } from "lucide-react"
+import { Check, ChevronsUpDown, File as FileJson, Sparkles, Zap } from "lucide-react"
 
 export function TopBar({
   fileName,
@@ -51,16 +51,18 @@ export function TopBar({
         </label>
 
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <button
-              type="button"
-              className="flex h-9 items-center gap-2 rounded-lg border border-border bg-secondary/60 px-3 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-            >
-              <span className="text-xs text-muted-foreground">Format</span>
-              {current.label}
-              <ChevronsUpDown className="h-3.5 w-3.5 text-muted-foreground" />
-            </button>
-          </DropdownMenuTrigger>
+          <DropdownMenuTrigger
+            render={
+              <button
+                type="button"
+                className="flex h-9 items-center gap-2 rounded-lg border border-border bg-secondary/60 px-3 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+              >
+                <span className="text-xs text-muted-foreground">Format</span>
+                {current.label}
+                <ChevronsUpDown className="h-3.5 w-3.5 text-muted-foreground" />
+              </button>
+            }
+          />
           <DropdownMenuContent align="end" className="w-44">
             <DropdownMenuLabel>Convert to</DropdownMenuLabel>
             <DropdownMenuSeparator />

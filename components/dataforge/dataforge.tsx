@@ -132,7 +132,7 @@ export function DataForge() {
   )
 
   return (
-    <TooltipProvider delayDuration={200}>
+    <TooltipProvider delay={200}>
       <div className="flex h-screen w-screen flex-col overflow-hidden bg-background text-foreground">
         <TitleBar fileName={fileName} />
         <div className="flex min-h-0 flex-1">
